@@ -1,0 +1,64 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+
+            <div class="card shadow p-4">
+                <h3 class="text-center mb-4">Register</h3>
+
+                <form method="POST">
+                    {% csrf_token %}
+
+                    <!-- Username -->
+                    <div class="mb-3">
+                        <label class="form-label">Username</label>
+                        <input type="text" name="username" class="form-control" required>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <input type="password" name="password1" class="form-control" required>
+                    </div>
+
+                    <!-- Confirm Password -->
+                    <div class="mb-3">
+                        <label class="form-label">Confirm Password</label>
+                        <input type="password" name="password2" class="form-control" required>
+                    </div>
+
+                    <!-- User Type Dropdown -->
+                    <div class="mb-3">
+                        <label class="form-label">User Type</label>
+                        <select name="user_type" class="form-select" required>
+                            <option value="patient">Patient</option>
+                            <option value="doctor">Doctor</option>
+                        </select>
+                    </div>
+
+                    <!-- Register Button -->
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">Register</button>
+                    </div>
+
+                </form>
+
+                <!-- Login Redirect -->
+                <div class="text-center mt-3">
+                    <p class="mb-1">Already have an account?</p>
+                    <a href="{% url 'login' %}" class="btn btn-outline-secondary btn-sm">Login</a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

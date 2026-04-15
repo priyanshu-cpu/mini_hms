@@ -1,0 +1,28 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+    Doctor Dashboard
+{% endblock %}
+
+
+{% block content %}
+
+<h3>Your Appointments</h3>
+
+{% for b in bookings %}
+    <p>
+        Doctor: {{ b.doctor.username }} |
+        Date: {{ b.date }} |
+        Time: {{ b.time_slot }}
+    </p>
+{% empty %}
+    <p>No bookings yet</p>
+{% endfor %}
+
+<div class="mb-3">
+    <a href="{% url 'book' %}" class="btn btn-primary">
+        Book Appointment
+    </a>
+</div>
+
+{% endblock %}

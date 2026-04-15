@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+
+# Django
+*.log
+db.sqlite3
+media/
+
+# Static files (optional if collected)
+staticfiles/
+
+# Environment variables
+.env
+
+# VS Code / IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+
+# PyInstaller
+*.spec
+
+# Coverage / testing
+.coverage
+htmlcov/
+
+# mypy
+.mypy_cache/
+
+# pytest
+.pytest_cache/
+
+# Mac / Linux temp files
+*.swp

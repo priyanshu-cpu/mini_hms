@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+    Book
+{% endblock %}
+{% block content %}
+
+<h3>Book Appointment</h3>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <select name="doctor" required>
+        <option value="">Select Doctor</option>
+        {% for doc in doctors %}
+            <option value="{{ doc.id }}">{{ doc.username }}</option>
+        {% endfor %}
+    </select>
+
+    <input type="date" name="date" required>
+    <input type="text" name="time_slot" placeholder="10AM-11AM" required>
+
+    <button type="submit">Book</button>
+</form>
+
+{% endblock %}
